@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 8</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection01.html">Index</a>
+
+<h3>Problem 8</h3>
+<ol>
+  <li>Calculate the curl of \(\vec{F} = r^n (x \hat{i} + y \hat{j})\).</li>
+  <li>Whenever possible, ﬁnd a potential \(g\) such that \(\vec{F}= \nabla g\)</li>
+</ol>
+
+<h3>Solution</h3>
+<ol>
+    <li>
+        \[Curl(\vec{F}) = \frac{d(x(x^2+y^2)^{n/2})}{dy} - \frac{d(y(x^2+y^2)^{n/2})}{dx}\]
+        \[\frac{d(x(x^2+y^2)^{n/2})}{dy}=(x^2+y^2)^{n/2}\frac{dx}{dy} + x \frac{d(x^2+y^2)^{n/2}}{d(x^2+y^2)} \cdot \frac{d(x^2+y^2)}{dy} = x\frac{n}{2} \frac{(x^2+y^2)^{n-2}}{r} \cdot 2y = 2nxy \frac{(x^2+y^2)^{n-2}}{r} \]
+        \[\frac{d(y(x^2+y^2)^{n/2})}{dx} = y \frac{(dx^2+y^2)^{n/2}}{d(x^2+y^2)} \cdot \frac{d(x^2+y^2)}{dx} = 2nxy \frac{(x^2+y^2)^{n-2}}{r}\]
+        Thus, the curl is 0. 
+    </li>
+    <li>
+        If \(g=g(r)\),
+        \[\nabla g = g'(r) \frac{x}{r}\hat{i} + g'(r) \frac{y}{r}\hat{j} = \frac{g'(r)}{r} (x\hat{i} + y\hat{j})\]
+        We have to find \(g(r)\) such that 
+        \[\frac{g'(r)}{r} = r^n \Rightarrow g'(r) = r^{n+1}\]
+
+        For \(n\neq 2\),
+        \[g(r) = \frac{1}{n+2} r^{n+2}\]
+
+        For \(n=2\),
+        \[g(r) = \ln(r)\]
+    </li>
+</ol>
+</body>

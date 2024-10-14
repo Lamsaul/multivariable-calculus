@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 2</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection02.html">Index</a>
+<h3>Problem 2</h3>
+Let S be the part of the spherical surface \(x^2 + y^2 + z^2 = 4\), lying in
+\(x^2 + y^2 < 1\), which is to say outside the cylinder of radius one with axis the z-axis.
+
+<ol>
+    <li>Compute the flux outward through \(S\) of the vector field \(\vec{F} = y\hat{i} -x\hat{j}+z\hat{k}\)</li>
+    <li>Show that the flux of this vector field through any part of the cylindrical surface is zero.</li>
+    <li>Using the divergence theorem applied to \(\vec{F}\), compute the volume of the region between \(S\)
+        and the cylinder.</li>
+</ol>
+<h3>Solution</h3>
+<ol>
+<li>
+  \[\frac{1}{4} (x^2+y^2+z^2) = 1 \Rightarrow \frac{1}{2} \sqrt{x^2+y^2+z^2} = 1\]
+
+  Thus, the normal vector about the sphere is, 
+  \[\hat{n} = \frac{1}{2} (x\hat{i}+y\hat{j}+z\hat{k})\]
+  \[\vec{F} \cdot \hat{n} = \frac{z^2}{2}\]
+
+  Intersection of the cylinder and the sphere occurs between an angle of \(30^o\) to \(270^o\) or \(\frac{\pi}{6}\) and \(\frac{5\pi}{6}\) against the \(z\) axis. So the flux around there is,
+  \[\int_0^{2\pi} \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} 8 \cos^2{\phi} \sin{\phi} \cdot d\phi d\theta = 8 \int_0^{2\pi} \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \sin{\phi} - \sin^{3}{\phi} \cdot d\phi d\theta = 8\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} [\theta(\sin{\phi} - \sin^3{\phi})]_{0}^{2\pi} \cdot d\phi = 16\pi \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \sin{\phi} - \sin^3{\phi} \cdot d\phi\]
+  \[-16\pi\left[\frac{\cos^3{\phi}}{3}\right]_{\frac{\pi}{6}}^{\frac{5\pi}{6}} = -16\pi \left[-\frac{\sqrt{3}}{8} - \frac{\sqrt{3}}{8}\right] = 4\sqrt{3} \pi\] 
+</li>
+<li>
+  The normal vector about any point is \((x,y,0)\), and since we have \(\vec{F} \cdot \hat{n} = \frac{z^2}{2}\), we get \(\vec{F} \cdot \hat{n} = \frac{0^2}{2}=0\)
+</li>
+<li>
+  \(Div(\vec{F}) = 1\), hence,
+
+  \[\int\int\int_T 1 \cdot dV = \int\int_S \vec{F} \cdot \hat{n} \cdot dS = 4\sqrt{3} \pi\]
+</li>
+</ol>
+</body>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+    <title>Surface Integrals And Flux</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<h2>Surface Integrals</h2>
+<p>
+\[
+\int_S\int f(x,y,z)\cdot dS = \int_R\int f(x,y, g(x,y)) \sqrt{g_x^2 +g_y^2+1} \cdot dA
+\]
+\[
+\int_S \int f(x, y, z) \cdot dS = \int_R \int f(x,g(x,z),z) \sqrt{g_x^2 + g_z^2+1} \cdot dA
+\]
+\[
+\int_S \int f(x, y, z) \cdot dS = \int_R \int f(g(y,z),y,z) \sqrt{g_y^2 + g_z^2+1} \cdot dA
+\]
+</p>
+<h3>Example</h3>
+<p>
+\[
+\int_S \int  x+2y+z \cdot dS
+\]
+</p>
+<p>For \(y+z=4\) inside \(x^2+y^2=1\).</p>
+<p>Let \(z=g(x,y)\), so \(g(x,y)=4-y\).</p>
+<p>Now, we get,</p>
+<p>
+\[
+\int_R \int x+2y+4-y \sqrt{0^2 + 1 + 1}\cdot dA=\sqrt{2}\int_R \int x+y+4\cdot dA
+\]
+\[
+\sqrt{2}\int_0^{2\pi} \int_{r=0}^{r=1} r (r\cos{\theta} + r\sin{\theta}+4) \cdot dr \cdot d\theta=4\sqrt{2}\pi
+\]
+</p>
+
+<h2>Parametric Surfaces</h2>
+<ul>
+    <li>For \(f(x,y,z)\) and \(x=x(u,v)\), \(y=y(u,v)\), and \(z=z(u,v)\), let 
+    \[
+    \vec{r}(u,v)=x(u,v)\hat{i} + y(u,v)\hat{j} + z(u,v)\hat{k}
+    \]
+    </li>
+    <li>Surface area is given by 
+    \[
+    \int_D \int ||r_u \times r_v|| \cdot dA
+    \]
+    </li>
+    <li>Where \(D\) is the domain of \(u\) and \(v\).</li>
+    <li>Parametric surface integral is given as 
+    \[
+    \int_D \int f(r(u,v))||r_u \times r_v|| \cdot dA
+    \]
+    </li>
+</ul>
+
+<h2>Flux</h2>
+<ul>
+    <li>If \(F\), a vector field, contains a surface \(S\), then \(F\) describes the flow/fluid at any point across the surface.</li>
+    <li>The rate of flow is called the flux.</li>
+    <li>Flux is given by 
+    \[
+    \int_S\int \textbf{F} \cdot dS
+    \]
+    </li>
+    <li>For a normal vector at any point in the surface, 
+    \[
+    \int_S \int \textbf{F} \cdot dS=\int_S \int \textbf{F} \cdot \hat{n} \cdot dS
+    \]
+    </li>
+    <li>If the fluid has a mass density at a point \(\rho(x,y,z)\), the mass of the fluid flowing across \(S\) is given by 
+    \[
+    \int_S \int \rho \cdot \textbf{F} \cdot \hat{n} \cdot dS
+    \]
+    </li>
+    <li>For \(\textbf{F}=P\hat{i}+Q\hat{j}+M\hat{k}\), 
+    \[
+    \int_S\int \textbf{F} \cdot dS = \int_S\int \textbf{F} \cdot \hat{n} \cdot dS = \int_R \int (-Pg_x-Qg_y+M) \cdot dA
+    \]
+    </li>
+    <li>Where \(z=g(x,y)\).</li>
+</ul>
+
+<h2>The Divergence Theorem</h2>
+<p>
+\[
+\text{Flux}=\int_S\int \textbf{F} \cdot dS = \int_T\int\int \text{Div}(F) \cdot dV
+\]
+</p>
+
+<h3>Example Problem</h3>
+<p>Find the flux through the vector field</p>
+<p>
+\[
+F(x,y,z)=(x+\sin{z})\hat{i} + (2y+\cos{x})\hat{j} + (3z+\tan{y})\hat{k}
+\]
+</p>
+<p>over the surface \(x^2+y^2+z^2=4\).</p>
+<p>
+\[
+\text{Div}(F) = 6
+\]
+</p>
+<p>
+\[
+\int_S\int \textbf{F} \cdot dS = \int_T \int \int 6 \cdot dV
+\]
+</p>
+<p>We can integrate it in spherical coordinates. So, \(0 \leq \rho \leq 2\), \(0 \leq \phi \leq \pi\), \(0\leq \theta \leq 2\pi\),</p>
+<p>
+\[
+\int_{0}^{2\pi} \int_0^\pi \int_0^2 6\rho^2 \sin{\phi} \cdot d\rho d\phi d\theta = 64\pi
+\]
+</p>
+
+<h2>Stokes Theorem</h2>
+<p>
+\[
+w = \oint_C \textbf{F} \cdot dr = \int_S \int \text{Curl}(\textbf{F}) \cdot dS
+\]
+</p>
+<p>\(S\) is not a plane.</p>
+<li><a href="line-integrals.html">Line Integrals Over Scalar and Vector Fields, Green's Theorem</a></li>
+</body>

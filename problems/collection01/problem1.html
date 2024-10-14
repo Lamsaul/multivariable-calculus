@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 1</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection01.html">Index</a>
+<h3>Problem 1</h3>
+<ol>
+<li>Evaluate $$\int_0^\infty \frac{e^{-x} - e^{-ax}}{x} \cdot dx$$</li>
+</ol>
+<h3>Answer</h3>
+\[\int_1^a e^{-xy} \cdot dy = \left[-\frac{e^{-xy}}{x}\right]_1^a = \frac{e^{-x}-e^{-ax}}{x}\]
+
+Thus, for a domain of \(0 \leq x \leq \infty\) and \(1 \leq y \leq a\), 
+
+\[\int_0^\infty \frac{e^{-x} - e^{-ax}}{x} \cdot dx = \int_0^\infty \int_1^a e^{-xy} \cdot dy \cdot dx = \int_1^a \int_0^\infty e^{-xy} \cdot dx \cdot dy\]
+\[\int_1^a \left[-\frac{e^{-xy}}{y}\right]_0^\infty \cdot dy = \int_1^a \frac{1}{y} \cdot dy = [\ln{y}]_1^a = \ln{a}\]
+</body>

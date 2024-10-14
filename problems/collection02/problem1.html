@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 1</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection02.html">Index</a>
+<h3>Problem 1</h3>
+<ol>
+<li>Show that the vector field $$\vec{F}= (e^x y z)\hat{i} + (e^x z +2yz)\hat{j} + (e^xy + y^2 + 1)\hat{k}$$ is conservative.</li>
+<li>Find the potential of \(\vec{F}\).</li>
+<li>Show that the vector field $$\vec{G} = y\hat{i} + x\hat{j} + y\hat{z}$$ is not conservative.</li>
+</ol>
+<h3>Solution</h3>
+<ol>
+<li>
+\[Curl(\vec{F}) = \begin{vmatrix} 
+i & j & k \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ 
+e^x y z & e^x z +2yz & e^xy + y^2 + 1
+\end{vmatrix} = \hat{i} \left(\frac{\partial(e^x y + y^2 + 1)}{\partial y} - \frac{\partial (e^x z + 2yz)}{\partial z}\right) - \hat{j} \left(\frac{\partial(e^x y + y^2 + 1)}{\partial x} - \frac{\partial (e^x yz)}{\partial z}\right) + \hat{k} \left(\frac{\partial(e^xz+2yz)}{\partial x} - \frac{\partial (e^x yz)}{\partial y}\right)\]
+\[\hat{i}(e^x+2y - e^x - 2y) - \hat{j}(e^x y - e^x y) + \hat{k}(e^x z - e^x z) = 0\]
+</li>
+<li>
+    \[f = \int \frac{\partial f}{\partial x} \cdot dx = \int e^x yz \cdot dx = e^x yz + g(y,z)\]
+    \[\frac{\partial f}{\partial y} = e^x z + g_y (y,z)\]
+    \[e^x z + 2yz = e^xz + g_y(y,z) \Rightarrow g(y,z) = \int 2yz \cdot dy\]
+    \[g(y,z) = y^2z + h(z) \Rightarrow \therefore f = e^xyz + y^2z + h(z)\]
+    And we get \(h_z (z) = 1\), giving us \(h(z) = z+C\), 
+
+    \[\therefore f=e^xyz + y^2z + z+C\]
+</li>
+<li>
+    \[Curl(G) = \begin{vmatrix}
+    \hat{i} & \hat{j} & \hat{k} \\ 
+    \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ 
+    y & x & y 
+    \end{vmatrix} = \hat{i}\left(1-0\right) - \hat{j}(0) + \hat{k}(1-1) = \hat{i}\]
+    \(\therefore \vec{G}\) is not conservative. 
+</li>
+</ol>
+</body>

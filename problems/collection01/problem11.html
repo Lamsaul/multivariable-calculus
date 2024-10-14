@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 11</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection01.html">Index</a>
+<h3>Problem 11</h3>
+<ol>
+  <li>Evaluate the surface integral \(\int \int_{\sum} \vec{F} \cdot \hat{n} \cdot dS\) where \(\sum\) is the part of the cone \(z=\sqrt{x^2+y^2}\) beneath the plane \(z=1\) with downward orientation and \(\vec{F}=x\hat{i}+y\hat{j}+z^4\hat{k}\).</li>
+</ol>
+<h3>Solution</h3>
+\[\int\int_S \vec{F} \cdot \hat{n} \cdot dS = \int\int_R (-Pg_x - Qg_y + M) \cdot dA\]
+
+Here, 
+\[P=x\\ Q=y\\ M=z^4 \\ g_x = \frac{\partial\sqrt{x^2+y^2}}{\partial x} = \frac{x}{\sqrt{x^2+y^2}} \\ g_y = \frac{\partial \sqrt{x^2+y^2}}{\partial y} = \frac{y}{\sqrt{x^2+y^2}}\]
+
+\[\int\int_S \vec{F} \cdot \hat{n} \cdot dS = \int\int_R -\frac{x^2}{\sqrt{x^2+y^2}}-\frac{y^2}{\sqrt{x^2+y^2}}+(x^2+y^2)^2 \cdot dA\]
+
+Using polar coordinates,
+\[\int_{0}^{2\pi} \int_0^1 r\left(-\frac{r^2}{r} + r^4\right) drd\theta = \int_0^{2\pi} \left[-\frac{r^3}{3}+\frac{r^6}{6}\right]_0^1 \cdot d\theta = \int_0^{2\pi} -\frac{1}{6} \cdot d\theta = -\frac{\pi}{3}\]
+</body>

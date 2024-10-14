@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>TNB Frames</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<h1>What are TNB frames?</h1>
+<ul>
+    <li>Describes where a point is heading (\(\vec{T}\)), turning (\(\vec{N}\)) and twisting (\(\vec{B}\)) on a space curve.</li>
+
+\[\vec{T} = \frac{r'(t)}{||r'(t)||}\]
+\[\vec{N} = \frac{\vec{T}'(t)}{||\vec{T}'(t)||}\]
+\[\vec{B} = \vec{N} \times \vec{T} = \frac{r'(t) \times r''(t)}{||r'(t) \times r''(t)||}\]
+<img src="assets/1-822.gif">
+<p><em>Visualization of TNB frames</em></p>
+</ul>
+
+<h2>Curvature</h2>
+<ul>
+    <li>It is a measure of a curve's failure to become a line.</li>
+    <li>The more 'curvy' the curve, the larger the curvature. It is denoted by \(\kappa\)</li>
+    <li>It is the change of the tangent vector with respect to the arc length. </li>
+    \[\kappa = \left|\left| \frac{d\vec{T}}{ds} \right|\right|=||T'(s)||= \frac{T'(t)}{||r'(t)||} = \frac{||r' \times r''||}{||r'||^3}\]
+</ul>
+
+<h2>Torsion</h2>
+<ul>
+    <li>It is a measure of a curve's failure to be contained within a plane. </li>
+    \[\tau = \frac{(\vec{r}' \times \vec{r}'') \cdot \vec{r}'''}{||\vec{r} \times \vec{r}''||} = -\frac{d\vec{B}}{ds} \cdot \vec{N}\]
+    <img src="assets/Evolute_of_cycloid.gif">
+    <li>The animation shows an oscillating circle. It kisses the curve at just one point. </li>
+    <li>The plane that contains the oscillating circle (the oscillating plane) must contain \(\vec{T}\) and \(\vec{N}\) (\(\vec{B}\) is normal to the plane). </li>
+    <li>The plane that contains \(\vec{N}\) and \(\vec{B}\) is called the normal plane, it is perpendicular to \(\vec{T}\). </li>
+</ul>
+<li><a href="vector-functions.html">Vector Functions</a></li>
+<li><a href="multivariable-differenciation.html">Differenciating Multivariable Functions</a></li>
+</body>

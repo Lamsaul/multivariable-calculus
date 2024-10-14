@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 3</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection02.html">Index</a>
+<h3>Problem 3</h3>
+Let S be the part of the spherical surface \(x^2 + y^2 + z^2 = 2\) lying in \(z > 1\). Orient \(S\) upwards and give its bounding circle, \(C\), lying in \(z = 1\) the compatible orientation.
+<ol>
+  <li>Parametrize \(C\) and use the parametrization to evaluate the line integral</li>
+  \[I = \oint_C xz\cdot dx + y \cdot dy + y \cdot dz\]
+  <li>Compute the curl of the vector field \(\textbf{F} = xz\hat{i} + y\hat{j} + y\hat{k}\)</li>
+  <li>Write down a flux integral through \(S\) which can be computed using the value of \(I\).</li>
+</ol>
+<h3>Solution</h3>
+<ol>
+    <li>
+        If \(z=1\), \(x^2+y^2=1\), so 
+        \[x=\cos{t} \Rightarrow dx = -dt\sin{t}\]
+        \[y=\sin{t} \Rightarrow dy = dt\cos{t}\]
+        \[z = 1 \Rightarrow dz = 0\]
+
+        For \(0 \leq t \leq 2\pi\), 
+        \[\oint_C xz\cdot dx + y \cdot dy + y \cdot dz = \int_{t=0}^{t=2\pi} \cos{t} \cdot -dt\sin{t} + \sin{t} \cdot dt\cos{t} = \int_{t=0}^{t=2\pi} -\sin{t}\cos{t} + \sin{t}\cos{t} \cdot dt = 0 \]
+    </li>
+    <li>
+        \[\nabla \times F = \begin{vmatrix}
+        i & j & k \\ 
+        \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ 
+        xz & y & y  
+        \end{vmatrix} = \hat{i} \left(\frac{\partial y}{\partial y} - \frac{\partial y}{\partial z}\right) - \hat{j}\left(\frac{\partial y}{\partial x} - \frac{\partial xz}{\partial z}\right) + \hat{k}\left(\frac{\partial x}{\partial y}-\frac{\partial xz}{\partial y}\right)= \hat{i}+x\hat{j}\]
+
+      </li>
+      <li>
+        By stokes' theorem, 
+        \[\oint_C \vec{F} \cdot d\vec{r} = \int\int_S (\nabla \times F) \cdot \hat{n} \cdot dS\]
+        Here, \(\hat{n}=\frac{1}{\sqrt{2}}(x, y, z)\), so, 
+        \[\int\int_S \frac{x+xy}{\sqrt{2}} \cdot dS\]
+      </li>
+</ol>
+</body>

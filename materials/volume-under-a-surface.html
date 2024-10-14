@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <title>Volume Under a Surface</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<h2>Volume under a surface</h2>
+<ul>
+    <li>Volume is surface area times height.</li>
+    <li>Unlike calculating the area under the curve, we have to push our perspective up by one dimension. That is to say, we have to calculate the volume under a surface.</li>
+    <li>For some surface \(f(x,y)=z\), this idea will first need us to set an interval for both \(x\) and \(y\).</li>
+    <li>These two intervals will give us a rectangle on the \(xy\) plane shadowing the section of the surface we want to calculate the volume under.</li>
+    <li>So, if we have \(x \in [a,b]\) and \(y \in [c,d]\), we get a rectangle on the \(xy\) plane with the area \((b-a) \times (d-c)\).</li>
+    <li>If we cut the rectangle up into \(m\) sections along the \(x\) axis and \(n\) sections along the \(y\) axis to give smaller rectangles with uniform width and height, we get these small lengths and breadths \(\Delta x\) and \(\Delta y\) as:
+        <p>
+            \[\Delta x = \frac{b-a}{m}\]<br>
+            \[\Delta y = \frac{d-c}{n}\]
+        </p>
+    </li>
+    <li>The area of each rectangle is \(\Delta x \Delta y\).</li>
+    <li>Thus, the volume of each tiny section is this surface area times the \(z\) value at those particular points. That is to say,
+        <p>
+            \[V\approx\sum_{i=1}^m \sum_{j=1}^n f(x_i,y_j) \Delta x_i \Delta y_j\]
+        </p>
+    </li>
+    <li>The more smaller we make the number of tiny sections, the more we can approximate the area under the section.</li>
+    <li>If we have, say, an infinite number of sections (i.e. \(m, n \to \infty\)), we'd have the exact value of the volume:
+        <p>
+            \[V = \lim_{m, n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x_i,y_j) \Delta x_i \Delta y_j = \int_R\int f(x,y) \cdot dx \cdot dy\]
+        </p>
+    </li>
+</ul>
+
+<h2>Setting up a Double Integral</h2>
+<ul>
+    <li>The region we calculate volume along can either be rectangular or non-rectangular.</li>
+    <li>In a rectangular case, we'd have:
+        <p>
+            \[\int_R\int f(x,y) \cdot dx \cdot dy \text{ for } R=\{(x,y): a \leq x \leq b, c \leq y \leq d\}\]
+        </p>
+    </li>
+    <li>Setting up this integral is simple,
+        <p>
+            \[\int_c^d \int_a^b f(x,y) \cdot dx \cdot dy\]
+        </p>
+    </li>
+    <li>Or, changing the order of \(dx\) and \(dy\),
+        <p>
+            \[\int_a^b \int_c^d f(x,y) \cdot dy \cdot dx\]
+        </p>
+    </li>
+    <li>Take a region bounded by \(y=x^2\) and \(y=2x\). If we want to find the volume of a surface confined to the area of intersection of these regions.</li>
+    <li>First, we have to plot out these two functions:
+        <p><img src="assets/plot1.png" alt="plot of two functions"></p>
+    </li>
+    <li>We get two points of intersections: \((2,4)\) and \((0,0)\).</li>
+    <li>To evaluate the volume within this area from a surface, we have to set up the double integral as:
+        <p>
+            \[\int_0^2\int_{y=x^2}^{y=2x} f(x,y) \cdot dy \cdot dx\]
+        </p>
+    </li>
+    <li>Or in terms of \(x\),
+        <p>
+            \[\int_{0}^4 \int_{x=\frac{1}{2}y}^{x=\sqrt{y}} f(x,y) \cdot dx \cdot dy\]
+        </p>
+    </li>
+    <li>The order of limits here matter as when we observe from the \(x\) axis, we'll have to take the left-most equation as the lower limit and right-most as the upper limit. And for the \(y\) axis, we have to take the bottom-most equation (within the intersecting region) as the lower limit and the upper-most as the upper limit.</li>
+</ul>
+<li><a href="optimizations.html">Optimizations</a></li>
+<li><a href="moments-and-triple-integrals.html">Moments And Triple Integrals</a></li>
+</body>

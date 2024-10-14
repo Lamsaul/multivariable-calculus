@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>Moments And Triple Integrals</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<h2>1st and 2nd Moments</h2>
+<ul>
+    <li>For a density function \(\rho(x,y)\), mass \(m\), center of mass position \((\bar{x}, \bar{y})\) of a 2-D lamina,
+        <p>
+            \[m=\int_R\int \rho(x,y) \cdot dA\]
+        </p>
+    </li>
+    <li>The moments of mass \(M_x\) and \(M_y\) are given by,
+        <p>
+            \[M_x = \int_R \int y\cdot \rho(x,y) \cdot dA\]<br>
+            \[M_y=\int_R \int x \cdot \rho(x,y) \cdot dA\]<br>
+            \[\bar{x} = \frac{M_y}{m}, \bar{y}=\frac{M_x}{m}\]
+        </p>
+    </li>
+    <li>And the second moments of inertia are given by,
+        <p>
+            \[I_x = \int_R \int y^2\cdot \rho(x,y) \cdot dA\]<br>
+            \[I_y=\int_R \int x^2 \cdot \rho(x,y) \cdot dA\]
+        </p>
+    </li>
+    <li>About the origin, \(I_o = I_x + I_y\).</li>
+</ul>
+
+<h2>Introduction to Triple Integrals</h2>
+<p>
+    \[\int f(x) \cdot dx\]
+</p>
+<ol>
+    <li>Area under \(f(x)\) (2-D)</li>
+    <li>Mass of a straight wire (1-D)</li>
+</ol>
+<p>
+    \[\int_R\int f(x,y) \cdot dA\]
+</p>
+<ol>
+    <li>Volume under \(f(x,y)\) (3-D)</li>
+    <li>Mass of a lamina (2-D)</li>
+</ol>
+<p>
+    \[\int \int \int f(x,y,z) \cdot dV\]
+</p>
+<ol>
+    <li>Some measurement of region on \(f(x,y,z)\) (4-D)</li>
+    <li>Mass of an object (3-D).</li>
+    <p>The mass idea only works if \(f(x)\), \(f(x,y)\) and \(f(x,y,z)\) are density functions.</p>
+
+</ol>
+<li><a href="volume-under-a-surface.html">Finding the Volume Under a Surface</a></li>
+<li><a href="spherical-cylindrical-coordinates.html">Cylindrical And Spherical Coordinates</a></li>
+</body>

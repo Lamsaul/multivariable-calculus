@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <title>Vector Fields</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<h1>Analyzing Vector Fields</h1>
+<h2>Divergence</h2>
+<ul>
+    <li>A measurement of how much fluid/flow enters the neighborhood around \(P\) compared to how much leaves.</li>
+    <li>If more fluid enters than leaves, then the divergence will be negative at \(P\).</li>
+    <li>If the same amount of fluid enters and leaves, then the divergence will be \(0\) at \(P\).</li>
+    <li>For 
+        <p>
+            \[
+            F(x,y,z)=P\hat{i}+Q\hat{j}+R\hat{k}
+            \]
+        </p>
+        <p>
+            \[
+            Div(F) = \nabla \cdot F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+            \]
+        </p>
+    </li>
+    <li>It is a scalar quantity.</li>
+</ul>
+
+<h2>Curl</h2>
+<ul>
+    <li>A measurement of the rotation of the vector field in the neighborhood around \(P\).</li>
+    <li>If curl is \(+\) at a point, then the flow would rotate counterclockwise.</li>
+    <li>And if \(-\), then clockwise.</li>
+    <li>If \(0\), then there is no rotation at \(P\).</li>
+    <li>
+        <p>
+            \[
+            Curl(F) = \nabla \times F
+            \]
+        </p>
+    </li>
+    <li>It is a vector.</li>
+</ul>
+
+<h2>Work Done to Move along a Vector Field</h2>
+
+<h3>Non-Conservative Vector Fields</h3>
+<ul>
+    <li>For a non-conservative vector field \(F(x,y,z)=F(x(t), y(t), z(t))\) along a path \(r(t)\), the work done for a particle to move along the given path \(C\) is given by, 
+        <p>
+            \[
+            w=\int_C F \cdot dr = \int_{t=a}^{t=b} F(r(t)) \cdot r'(t) \cdot dt
+            \]
+        </p>
+    </li>
+    <li>These integrals are *path dependent*.</li>
+</ul>
+
+<h3>Conservative Vector Fields</h3>
+<ul>
+    <li>\(F(x,y)\) is conservative iff \(F(x,y)=\nabla f(x,y)\) for some \(f(x,y)\) that is called a potential function.</li>
+    <li>This means a line integral within a conservative vector field can be expressed by, 
+        <p>
+            \[
+            \int_C F \cdot dr = \int_C \nabla f \cdot dr = f(b)-f(a)
+            \]
+        </p>
+    </li>
+</ul>
+
+<h4>Showing \(F\) is Conservative</h4>
+<ul>
+    <li>For a conservative \(F(x,y)=P\hat{i}+Q\hat{j}\), 
+        <p>
+            \[
+            \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+            \]
+        </p>
+    </li>
+    <li>Or for \(F(x,y,z)=P\hat{i}+Q\hat{j}+R\hat{k}\), 
+        <p>
+            \[
+            Curl(F)=0
+            \]
+        </p>
+    </li>
+</ul>
+<li><a href="change-in-variables.html">Change in Variables</a></li>
+<li><a href="line-integrals.html">Line Integrals Over Scalar and Vector Fields, Green's Theorem</a></li>
+</body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 2</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection01.html">Index</a>
+<h3>Problem 2</h3>
+<ol>
+  <li>Show that the average distance of the points of a disk of radius a to its center is \(2a/3\).</li>
+</ol>
+<h3>Solution</h3>
+The first moment of area can be determined as,
+\[Q=\int_A r \cdot dA\]
+
+We know that, $dA= rdrd\theta$, 
+
+\[Q=\int_0^{2\pi} \int_0^a r \cdot r \cdot drd\theta=\int_0^{2\pi} \int_0^a r^2 \cdot drd\theta\]
+\[\int_0^{2\pi} \frac{a^3}{3} \cdot d\theta = \frac{2\pi a^3 }{3}\]
+
+We know that the total area of the disk is:
+
+\[\pi a^2\]
+
+The mean distance of all points from the center is hence, 
+\[\bar{r} = \frac{\frac{2\pi a^3}{3}}{\pi a^2} = \frac{2}{3}a\]
+</body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Problem 10</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../collection01.html">Index</a>
+<h3>Problem 10</h3>
+<ol>
+  <li>Find the flux of the vector field \(\vec{F}= \frac{x}{x^2+y^2} \hat{i} + \frac{y}{x^2+y^2}\hat{j}\) outwards through any circle centered at \((1,0)\) of radius \(r \neq 1\).</li>
+</ol>
+<h3>Solution</h3>
+<p>We'll have to divide this problem into two parts: one where \(r < 1\) where the origin is excluded and \(\vec{F}\) is defined and \(r > 1\) where we encounter a singularity.</p>
+<p>The case of \(r < 1\) is simple because we can apply green's theorem,</p>
+\[\oint \vec{F} \cdot \hat{n} \cdot ds = \int\int_D div(\vec{F}) \cdot dA\]
+\[div(\vec{F}) = \frac{\partial}{\partial x} \left(\frac{x}{x^2+y^2}\right)+\frac{\partial}{\partial y} \left(\frac{y}{x^2+y^2}\right) = \frac{(x^2+y^2)-2x^2}{(x^2+y^2)^2}+\frac{(x^2+y^2)-2y^2}{(x^2+y^2)^2}=0\]
+\[\therefore \oint \vec{F} \cdot \hat{n} \cdot ds = 0\]
+
+<p>The case of \(r > 1\) is a bit more complicated because it includes the origin. We can simply cut it out by separating the region into a circle of radius \(b\). If we assume that this contour is moving clockwise, then knowing that the flux originates about the origin, the amount of the vector field passing through the smaller circle \(C_b\) centered at \((0,0)\) with radius \(b\) is equal to the larger surrounding region \(C_a\) despite their difference in size, causing them to cancel each other out.</p>
+\[\oint_{C_b} \vec{F} \cdot \hat{n} \cdot ds = \oint_{C_a} \vec{F} \cdot \hat{n} \cdot ds\]
+We'll be examining \(C_b\). Our path is a circle, and hence the unit normal vector will simply be \(\cos{\theta}\hat{i} +\sin{\theta}\hat{j}\), or in cartesian form \(\frac{x}{b}\hat{i}+ \frac{y}{b}\hat{j}\). In this case \(x^2+y^2=b\), a constant. So, 
+\[\oint_{C_b} \vec{F} \cdot \hat{n} \cdot ds = \oint_{C_b} \left(\frac{x}{b^2} \hat{i} + \frac{y}{b^2} \hat{j}\right) \cdot \left(\frac{x}{b}\hat{i}+ \frac{y}{b}\hat{j}\right) \cdot ds\]
+\[\oint_{C_b} \frac{x^2+y^2}{b^3} \cdot ds = \oint_{C_b} \frac{1}{b} \cdot ds = 2\pi\]
+
+As \(\oint_{C_b} ds\) represents the circumference \(2\pi b\). 
+</body>

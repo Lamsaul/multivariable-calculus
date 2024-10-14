@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<head>
+    <title>Line Integrals</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<p>
+<h1>Line Integrals</h1>
+<h2>How Does the Computation Work?</h2>
+
+
+<p>For a path along a surface,</p>
+<p>
+    \[
+    \int_C f(x,y) \cdot ds = \int_{t=a}^{t=b} f(x(t),y(t)) ||r'(t)|| \cdot dt
+    \]
+</p>
+
+<p>Here, we're integrating along a path rather than two given limits.</p>
+<p>For a <em>vector field</em> \(F(x,y,z)=F(x(t), y(t), z(t))\) and \(C: r(t)=x(t)\hat{i}+y(t)\hat{j}+z(t)\hat{k}\) for \(b \leq t \leq a\), the work done for a point to move along the curve is,</p>
+<p>
+    \[
+    w=\int_{t=a}^{t=b} F(\vec{r}(t)) \cdot r'(t) \cdot dt = \int_C F \cdot dr
+    \]
+</p>
+<h2>Examples</h2>
+
+<ol>
+    <li>
+        <p>
+            \[
+            \int_C xyz^2 \cdot ds
+            \]
+        </p>
+        <p>
+            \(C\): The segment \((1,1,0) \to (2,3,1)\)
+        </p>
+        <p>Set up a parametric equation:</p>
+        <p>
+            \[
+            x(t) = x_o + k_1t = 1 + k_1t
+            \]
+        </p>
+        <p>
+            \[
+            y(t) = y_o + k_2t = 1 + k_2t
+            \]
+        </p>
+        <p>
+            \[
+            z(t) = z_o + k_3t = 0 + k_3t
+            \]
+        </p>
+
+        <p>At \((2,3,1)\) and \(t=1\),</p>
+        <p>
+            \(2 = 1 + k_1 \Rightarrow k_1=1\)
+        </p>
+        <p>
+            \(3=1+k_2 \Rightarrow k_2 = 2\)
+        </p>
+        <p>
+            \(k_3=1\)
+        </p>
+
+        <p>So, we have:</p>
+        <p>
+            \[
+            x(t)=1+t
+            \]
+        </p>
+        <p>
+            \[
+            y(t)=1+2t
+            \]
+        </p>
+        <p>
+            \[
+            z(t)=t
+            \]
+        </p>
+
+        <p>This gives us \(0 \leq t \leq 1\) for this particular set of parametric equations. And,</p>
+        <p>
+            \[
+            \vec{r}(t) = x\hat{i}+y\hat{j}+z\hat{k} = (1+t)\hat{i} + (1+2t)\hat{j} + t\hat{k}
+            \]
+        </p>
+        <p>
+            \[
+            r'(t) = \hat{i} + 2\hat{j} + \hat{k}
+            \]
+        </p>
+        <p>
+            \[
+            ||r'(t)|| = \sqrt{6}
+            \]
+        </p>
+        <p>
+            \[
+            \int_C xyz^2 \cdot ds = \sqrt{6}\int_{t=0}^{t=1} (1+t)(2+t)t \cdot dt = \frac{89\sqrt{6}}{60}
+            \]
+        </p>
+    </li>
+    
+    <li>
+        <p>
+            \[
+            \int_C xy \cdot dx + (x+y)\cdot dy
+            \]
+        </p>
+        <p>Two segments: \(C_1:(1,2) \to (3,4)\) and \(C_2:(3,4) \to (4,0)\)</p>
+
+        <p>For \(C_1\): \(0\leq t \leq 1\),</p>
+        <p>
+            \[
+            x=1+2t
+            \]
+        </p>
+        <p>
+            \[
+            y=2+2t
+            \]
+        </p>
+
+        <p>For \(C_2\): \(0\leq t \leq 1\),</p>
+        <p>
+            \[
+            x=3+t
+            \]
+        </p>
+        <p>
+            \[
+            y=4-4t
+            \]
+        </p>
+
+        <p>For \(C_1\): \(dx=2dt\) and \(dy=2dt\),</p>
+        <p>
+            \[
+            8\int_{t=0}^{t=1} (1+2t)(1+t) \cdot dt + (3+4t)\cdot dt = \frac{68}{3}
+            \]
+        </p>
+
+        <p>For \(C_2\): \(dx=dt\) and \(dy=-4dt\)</p>
+        <p>
+            \[
+            \int_{t=0}^{t=1} (3+t)(4-4t) \cdot dt (7-3t) \cdot -4dt = -\frac{46}{3}
+            \]
+        </p>
+
+        <p>Adding them up, we get:</p>
+        <p>
+            \[
+            \frac{22}{3}
+            \]
+        </p>
+    </li>
+</ol>
+
+<h2>Example: Conservative Vector Fields</h2>
+
+<ol>
+    <li>
+        <p>Calculate the work done on \(F(x,y)=(2y+1)\hat{i}+(2x+3)\hat{j}\) from \(A(0,0)\) to \(B(-1,1)\)</p>
+
+        <ol>
+            <li>
+                <p>Determine if \(F\) is conservative:</p>
+                <p>
+                    \[
+                    \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} = 2
+                    \]
+                </p>
+                <p>Thus, \(F\) is conservative.</p>
+            </li>
+
+            <li>
+                <p>Finding \(f\) for \(F= \nabla f\).</p>
+                <p>If \(\nabla f=F\), then,</p>
+                <p>
+                    \[
+                    \frac{\partial f}{\partial x} = 2y+1
+                    \]
+                </p>
+                <p>
+                    \[
+                    \frac{\partial f}{\partial y} = 2x+3
+                    \]
+                </p>
+
+                <p>
+                    \[
+                    f(x,y)=\int \frac{\partial f}{\partial x} \cdot dx = \int 2y+1 \cdot dx = 2xy+x+g(y)
+                    \]
+                </p>
+
+                <p>We add some function \(g(y)\) as a replacement for the usual constant because during integration we treat \(y\) as a constant. We can now get another expression for the partial derivative of \(f\) with respect to \(y\),</p>
+                <p>
+                    \[
+                    \frac{\partial f}{\partial y} = 2x+g'(y)
+                    \]
+                </p>
+
+                <p>Equating this to our original expression,</p>
+                <p>
+                    \[
+                    2x+g'(y)=2x+3 \Rightarrow g'(y) = 3
+                    \]
+                </p>
+
+                <p>We can get \(g(y)\) as,</p>
+                <p>
+                    \[
+                    g(y) = \int g'(y) \cdot dy = 3y+c
+                    \]
+                </p>
+
+                <p>Thus,</p>
+                <p>
+                    \[
+                    f(x,y) = 2xy+x+3y+c
+                    \]
+                </p>
+            </li>
+
+            <li>
+                <p>Calculating the work done,</p>
+                <p>
+                    \[
+                    \int_C F \cdot dr = f(b)-f(a) = f(-1,1)-f(0,0) = (-2-1+3+c)-(0+c) = 0
+                    \]
+                </p>
+            </li>
+        </ol>
+    </li>
+</ol>
+<h1>Green's Theorem</h1>
+<h2>The Result</h2>
+<ul>
+    <li>For a non-conservative vector field, work done is</li>
+    \[\oint_C \left( P \, dx + Q \, dy \right) = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, dA\]
+
+    Flux is given by,
+    \[\oint_C \vec{F} \cdot \hat{n} \cdot ds = \int\int_R (\nabla \cdot \vec{F}) \cdot dA\]
+</ul>
+<h2>Examples</h2>
+<ol>
+    <li>
+        <p>
+            \[
+            \oint_C x^3 \cdot dx + xy \cdot dy
+            \]
+        </p>
+        <p>For \(C: (0,0), (1,1), (0,1)\).</p>
+
+        <p>
+            \[
+            \frac{\partial Q}{\partial x} = y
+            \]
+        </p>
+        <p>
+            \[
+            \frac{\partial P}{\partial y} = 0
+            \]
+        </p>
+
+        <p>Our region is defined between the lines \(y=x\), \(y=1\), \(y=0\), and \(x=0\).</p>
+
+        <p>
+            \[
+            \int_{y=0}^{y=1} \int_{x=0}^{x=y} y^2 \cdot dx \cdot dy = \int_{y=0}^{y=1} \frac{1}{3}y^3 \cdot dy = \frac{1}{3}
+            \]
+        </p>
+    </li>
+
+    <li>
+        <p>
+            \[
+            \oint_C (y^2 + \cos(x)) \cdot dx + (x-\arctan(y)) \cdot dy
+            \]
+        </p>
+        <p>For \(C: y=4-x^2\) and \(y=0\).</p>
+
+        <p>
+            \[
+            \frac{\partial Q}{\partial x} = 1
+            \]
+        </p>
+        <p>
+            \[
+            \frac{\partial P}{\partial y} = 2y
+            \]
+        </p>
+
+        <p>
+            \[
+            \int_R \int 1-2y \cdot dy \cdot dx = \int_{x=-2}^{x=2} \int_{y=0}^{y=4-x^2} 1-2y \cdot dy \cdot dx
+            \]
+        </p>
+
+        <p>
+            \[
+            -\frac{352}{15}
+            \]
+        </p>
+    </li>
+</ol>
+<li><a href="vector-fields.html">Vector Fields and Line Integrals</a></li>
+<li><a href="surface-integrals-and-flux.html">Surface Integrals, Flux, And Stoke's Theorem</a></li>
+</body>

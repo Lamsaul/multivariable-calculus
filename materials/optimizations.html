@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <title>Optimizations</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+<body>
+<a href="../index.html">Index</a>
+<h2>Extrema of functions</h2>
+<h3>1 Variable Vs. 2 Variable Functions</h3>
+<table border="1">
+    <tr>
+        <th>1 Variable Functions</th>
+        <th>2 Variable Functions</th>
+    </tr>
+    <tr>
+        <td>Relative maximum is the peak of a <i>curve</i></td>
+        <td>Relative maximum is the peak of a <i>surface</i></td>
+    </tr>
+    <tr>
+        <td>Given at critical points where f'(x)=0 or where f'(x) is undefined in the domain of the function</td>
+        <td>Given at critical points where f<sub>x</sub>=f<sub>y</sub>=0 or where f<sub>x</sub> or f<sub>y</sub> are undefined in the domain of the function.</td>
+    </tr>
+    <tr>
+        <td>Critical points could be inflection points</td>
+        <td>Critical points could be undefined or <i>saddle</i> points</td>
+    </tr>
+</table>
+
+<h3>\(2^{\text{nd}}\) Derivative Test in 3-D</h3>
+<ul>
+    <li>When \(f_{x}\) and \(f_{y}\) go from \(+ \to -\), it is a relative <i>maximum</i></li>
+    <li>When \(f_{x}\) and \(f_{y}\) go from \(- \to +\), it is a relative <i>minimum</i></li>
+    <li>When \(f_{x}\) goes from \(+ \to -\) but \(f_{y}\) goes from \(- \to +\) (or vice versa), we have a <i>saddle</i></li>
+</ul>
+<p>The second derivative test for two variable functions is given as:</p>
+<p>
+    \[D(x,y)=f_{xx}(x,y) \cdot f_{yy}(x,y)-(f_{xy})^2\]
+</p>
+<ol>
+    <li>When \(D(a,b) > 0\), \(f_{xx}(a,b)>0\), \((a,b)\) gives a relative minimum.</li>
+    <li>When \(D(a,b) > 0\), \(f_{xx}(a,b)<0\), \((a,b)\) gives a relative maximum.</li>
+    <li>When \(D(a,b) < 0\), \((a,b)\) gives a saddle.</li>
+    <li>When \(D(a,b)=0\), results are inconclusive.</li>
+</ol>
+
+<h2>Constrained Optimization</h2>
+<h3>The Idea</h3>
+<ul>
+    <li>\(f(x,y)=z\) is a surface and \(g(x,y)=c\) is a level curve to a surface \(g(x,y)=z\).</li>
+    <li>The intersection of the level curve of \(g(x,y)\) and \(f(x,y)\) gives a constrained maxima and minima.</li>
+    <li>The normals of the level curves are scalar multiples of each other. That is to say: 
+        $$\nabla f(x,y) = \lambda \nabla g(x,y)$$
+    </li>
+    <li>This \(\lambda\) is called a <i>Lagrange multiplier</i>. The solution to this will give a maximum and minimum.</li>
+</ul>
+
+<h3>Example Problem</h3>
+<p>
+    \(f(x,y,z)=x+2y-2z\) with a constraint \(x^2+2y^2+4z^2=1\). Treat 
+    $$x^2+2y^2+4z^2=1$$ 
+    as a level surface to \(g(x,y,z)=w\).
+</p>
+<p>
+    $$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
+    $$\hat{i}+2\hat{j}-2\hat{k}=\lambda(2x\hat{i}+4y\hat{j}+8z\hat{k})$$
+</p>
+<p>
+    \[\begin{matrix}
+    2x\lambda = 1 \Rightarrow \lambda = \frac{1}{2x} \\ 
+    4y\lambda = 2 \Rightarrow \lambda = \frac{1}{2y} \\ 
+    8z\lambda = -2 \Rightarrow \lambda = -\frac{1}{4z}
+    \end{matrix}\]
+</p>
+<p>
+    \[\left(\frac{1}{2\lambda}\right)^2 + 2\left(\frac{1}{2\lambda}\right)^2 + 4\left(-\frac{1}{4\lambda}\right)^2=1\]
+    \[\lambda = \pm 1\]
+</p>
+<p>For \(\lambda=1\), we get \((\frac{1}{2}, \frac{1}{2}, -\frac{1}{4})\), and for \(\lambda = -1\), \((-\frac{1}{2}, -\frac{1}{2}, \frac{1}{4})\).</p>
+<li><a href="multivariable-differenciation.html">Differenciating Multivariable Functions</a></li>
+<li><a href="volume-under-a-surface.html">Finding the Volume Under a Surface</a></li>
+</body>
